@@ -48,18 +48,44 @@ export default function Home() {
 
           </div>
 
-          <div className="flex justify-center md:justify-end">
-            <div className="relative h-80 w-64 overflow-hidden rounded-2xl border border-slate-700 shadow-xl sm:h-96 sm:w-72">
-              <Image
-                src="/tabish-profile.jpeg"
-                alt="Tabish Ali - Media Professional"
-                fill
-                sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 320px"
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
+          
+<div className="flex justify-center md:justify-end">
+  <div className="relative h-72 w-72 rounded-full bg-linear-to-br from-cyan-400 via-sky-500 to-violet-500 p-1 shadow-[0_0_35px_rgba(56,189,248,0.25)] transition duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(56,189,248,0.4)] sm:h-80 sm:w-80 md:h-96 md:w-96">
+    <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-[#0b1220]">
+      
+<div className="flex justify-center md:justify-end">
+  <div className="group relative h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96">
+    {/* Circular picture */}
+    <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-cyan-400 shadow-[0_0_30px_rgba(56,189,248,0.25)] transition-opacity duration-300 group-hover:opacity-0">
+      <Image
+        src="/Generated_Image.jpg"
+        alt="Tabish Ali - Media Professional"
+        fill
+        sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, 384px"
+        className="object-cover object-center"
+        priority
+      />
+    </div>
+
+    
+{/* Full picture on hover */}
+<div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl border-2 border-cyan-400/80 bg-white/5 p-1 opacity-0 shadow-[0_0_30px_rgba(56,189,248,0.3)] backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:opacity-100">
+  <Image
+    src="/Generated_Image.jpg"
+    alt="Full portrait of Tabish Ali"
+    fill
+    sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, 384px"
+    className="rounded-xl object-contain"
+  />
+</div>
+
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
         </section>
 
         <div className="mx-auto max-w-5xl border-t border-slate-700" />
@@ -141,22 +167,45 @@ export default function Home() {
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 
-            {/* Personal Portfolio */}
-            <div className="rounded-xl border border-slate-700/80 bg-[#111c2e] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
-              <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
-                Next.js / React / TypeScript
-              </p>
-              <h3 className="mb-3 text-lg font-semibold text-cyan-400">
-                Personal Portfolio
-              </h3>
-              <p className="mb-4 leading-7 text-slate-300">
-                My personal website showcasing my skills, projects, and
-                experience in media, web development, and AI.
-              </p>
-              <span className="text-sm text-slate-400">
-                Current Website
-              </span>
-            </div>
+            
+{/* Personal Portfolio */}
+<div className="rounded-xl border border-slate-700/80 bg-[#111c2e] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+  <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
+    Next.js / React / TypeScript
+  </p>
+
+  <h3 className="mb-3 text-lg font-semibold text-cyan-400">
+    Personal Portfolio
+  </h3>
+
+  <p className="mb-4 leading-7 text-slate-300">
+    My personal website showcasing my skills, projects, and
+    experience in media, web development, and AI.
+  </p>
+
+  
+<div className="flex flex-wrap gap-4 text-sm">
+  <a
+    className="text-cyan-400 hover:underline"
+    href="https://github.com/MuhammadTabishAli/my-portfolio"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub ↗
+  </a>
+
+  <a
+    className="text-cyan-400 hover:underline"
+    href="https://my-portfolio-pi-three-azvpma3f03.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Live Demo ↗
+  </a>
+</div>
+
+</div>
+
 
             {/* Unit Converter */}
             <div className="rounded-xl border border-slate-700/80 bg-[#111c2e] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
@@ -266,6 +315,32 @@ export default function Home() {
             
           </div>
         </section>
+
+{/* Media Experience CTA */}
+<section className="px-4 py-12 sm:py-16">
+  <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-[#111c2e] via-[#12253b] to-[#111c2e] p-7 text-center shadow-lg shadow-cyan-500/10 sm:p-10">
+    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
+      My Professional Journey
+    </p>
+
+    <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+      Explore My Media Experience
+    </h2>
+
+    <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+      Discover my journey in television journalism, news production,
+      live broadcasts, and editorial coordination.
+    </p>
+
+    <a
+      href="/media-experience"
+      className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/50 bg-cyan-400 px-6 py-3 text-sm font-bold text-[#0b1220] shadow-[0_0_20px_rgba(34,211,238,0.2)] transition duration-300 hover:scale-105 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)]"
+    >
+      View Media Experience
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
 
 
         {/* Contact */}
