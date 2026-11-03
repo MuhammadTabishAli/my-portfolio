@@ -101,17 +101,17 @@ const tools = [
 
 export default function MediaExperiencePage() {
   return (
-    <main className="min-h-screen bg-[#0b1220] px-4 py-10 text-slate-200 sm:px-6 sm:py-14">
+    <main className="min-h-screen bg-[#182230] px-4 py-10 text-slate-200 sm:px-6 sm:py-14">
       <div className="mx-auto max-w-5xl">
         <Link
-          href="/#skills"
+          href="/"
           className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-sm text-cyan-300 transition hover:border-cyan-400 hover:bg-cyan-400/10"
         >
           <span aria-hidden="true">←</span>
           Back to Portfolio
         </Link>
 
-        <header className="relative mt-10 overflow-hidden rounded-3xl border border-slate-700/70 bg-linear-to-br from-[#13243b] via-[#101c30] to-[#0b1220] p-6 sm:p-10">
+        <header className="relative mt-10 overflow-hidden rounded-3xl border border-slate-700/70 bg-linear-to-br from-[#13243b] via-[#101c30] to-[#182230] p-6 sm:p-10">
           <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl" />
 
           <div className="relative">
@@ -123,27 +123,27 @@ export default function MediaExperiencePage() {
               Media Experience
             </h1>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#BBC6D3] sm:text-base">
               A professional journey in television journalism, editorial
               planning, live news production, and broadcast operations.
             </p>
 
             <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-slate-700 bg-[#0b1220]/60 p-4">
+              <div className="rounded-xl border border-slate-700 bg-[#182230]/60 p-4">
                 <p className="text-2xl font-extrabold text-cyan-300">2007</p>
                 <p className="mt-1 text-xs text-slate-400">
                   Career began
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-700 bg-[#0b1220]/60 p-4">
+              <div className="rounded-xl border border-slate-700 bg-[#182230]/60 p-4">
                 <p className="text-2xl font-extrabold text-cyan-300">4</p>
                 <p className="mt-1 text-xs text-slate-400">
                   Professional roles
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-700 bg-[#0b1220]/60 p-4">
+              <div className="rounded-xl border border-slate-700 bg-[#182230]/60 p-4">
                 <p className="text-2xl font-extrabold text-cyan-300">
                   Live TV
                 </p>
@@ -169,7 +169,7 @@ export default function MediaExperiencePage() {
             {experiences.map((experience) => (
               <article
                 key={`${experience.company}-${experience.role}`}
-                className="group rounded-2xl border border-slate-700/80 bg-[#111c2e] p-5 transition duration-300 hover:border-cyan-400/60 sm:p-7"
+                className="group rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition duration-300 hover:border-cyan-400/60 sm:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="mb-4 flex h-16 w-28 items-center justify-center rounded-xl border border-slate-700 bg-white p-2">
@@ -199,7 +199,7 @@ export default function MediaExperiencePage() {
                     </p>
                   </div>
 
-                  <span className="w-fit shrink-0 rounded-lg border border-slate-700 bg-slate-900/50 px-3 py-2 text-xs text-slate-300 sm:text-sm">
+                  <span className="w-fit shrink-0 rounded-lg border border-slate-700 bg-slate-900/50 px-3 py-2 text-xs text-[#BBC6D3] sm:text-sm">
                     {experience.duration}
                   </span>
                 </div>
@@ -214,7 +214,7 @@ export default function MediaExperiencePage() {
                   {experience.responsibilities.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-3 text-sm leading-7 text-slate-400 sm:text-base"
+                      className="flex gap-3 text-sm leading-7 text-slate-400 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.75)] sm:text-base"
                     >
                       <span className="mt-1 text-cyan-400">▹</span>
                       <span>{item}</span>
@@ -244,7 +244,7 @@ export default function MediaExperiencePage() {
             {specialCoverage.map((event) => (
               <article
                 key={event.title}
-                className="rounded-2xl border border-slate-700/80 bg-[#111c2e] p-5 transition hover:border-cyan-400/50"
+                className="rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition hover:border-cyan-400/50"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-lg text-cyan-300">
                   ✦
@@ -272,7 +272,7 @@ export default function MediaExperiencePage() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-slate-700 bg-[#111c2e] px-4 py-2 text-sm text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-300"
+                className="rounded-full border border-slate-700 bg-[#243344] px-4 py-2 text-sm text-[#BBC6D3] transition hover:border-cyan-400/60 hover:text-cyan-300"
               >
                 {skill}
               </span>
@@ -294,14 +294,14 @@ export default function MediaExperiencePage() {
             {tools.map((tool) => (
               <div
                 key={tool}
-                className="rounded-xl border border-slate-700/80 bg-[#111c2e] px-4 py-4 text-center text-sm font-medium text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-300"
+                className="rounded-xl border border-slate-700/80 bg-[#243344] px-4 py-4 text-center text-sm font-medium text-[#BBC6D3] transition hover:border-cyan-400/60 hover:text-cyan-300"
               >
                 {tool}
               </div>
             ))}
           </div>
         </section>
-
+{/* 
         <section className="mt-14 rounded-2xl border border-cyan-400/20 bg-linear-to-r from-cyan-400/10 to-blue-500/5 p-6 sm:p-8">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
             Professional Focus
@@ -309,15 +309,59 @@ export default function MediaExperiencePage() {
           <h2 className="mt-3 text-xl font-bold text-white sm:text-2xl">
             Journalism, Editorial Judgment & Live Production
           </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base">
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#BBC6D3] sm:text-base">
             Focused on accurate news presentation, effective newsroom
             coordination, clear storytelling, and the smooth delivery of
             live television broadcasts.
           </p>
-        </section>
+        </section> */}
+{/* Contact */}
+<section
+  id="contact"
+  className="mt-14 border-t border-[#354252] py-12"
+>
+  <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+    Contact Me
+  </h2>
 
-        <footer className="mt-12 border-t border-slate-800 pt-6 text-sm text-slate-500">
-          <p className="font-semibold text-slate-300">
+  <p className="mb-6 max-w-2xl leading-7 text-[#BBC6D3]">
+    Interested in working together or discussing an opportunity?
+    Feel free to get in touch.
+  </p>
+
+  <div className="flex flex-wrap gap-4">
+    {/* Email */}
+    <a
+      href="mailto:ttabish9@gmail.com"
+      className="inline-block rounded-lg border border-cyan-400/60 bg-cyan-400/10 px-6 py-3 font-semibold text-cyan-300 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-lg hover:shadow-cyan-400/20"
+    >
+      Email Me
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/in/muhammad-tabish-ali-3864652b8/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block rounded-lg border border-[#8BC5D8] bg-[#243344] px-6 py-3 font-semibold text-[#E5EAF1] transition-all duration-300 hover:border-sky-300 hover:bg-sky-400/10 hover:text-white hover:shadow-lg hover:shadow-sky-400/20"
+    >
+      LinkedIn Profile
+    </a>
+
+    {/* WhatsApp */}
+    <a
+      href="https://wa.me/923213203026"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block rounded-lg border border-emerald-400/60 bg-emerald-500/10 px-6 py-3 font-semibold text-emerald-300 transition-all duration-300 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-lg hover:shadow-emerald-400/20"
+    >
+      WhatsApp Me
+    </a>
+  </div>
+</section>
+
+        <footer className="mt-12 border-t border-[#354252] pt-6 text-sm text-slate-500">
+          <p className="font-semibold text-[#BBC6D3]">
             Muhammad Tabish Ali
           </p>
           <p className="mt-1">Media Professional · News Production · AI Skills</p>
