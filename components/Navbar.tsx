@@ -1,32 +1,82 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "/media-experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
+
+const linkClass =
+  "flex min-h-11 items-center rounded-md px-3 text-ink-muted transition-colors duration-200 hover:text-accent md:px-0";
 
 export default function Navbar() {
-  return (
-    <nav className="sticky top-0 z-50 border-b border-[#354252] bg-[#182230]/95 px-3 py-3 backdrop-blur sm:px-6 sm:py-5">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 sm:flex-row sm:justify-between">
-        <h2 className="text-center text-lg font-extrabold tracking-wide text-transparent bg-clip-text bg-linear-to-r from-slate-100 via-sky-300 to-violet-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.25)] transition-all duration-300 hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.75)] sm:text-2xl">
-          Muhammad Tabish Ali
-        </h2>
+  const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-        <div className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-[#BBC6D3] sm:w-auto sm:gap-6">
-          <a href="#home" className="transition-colors duration-300 hover:text-blue-400">
-            Home
-          </a>
-          <a href="#about" className="transition-colors duration-300 hover:text-blue-400">
-            About
-          </a>
-          <a href="#skills" className="transition-colors duration-300 hover:text-blue-400">
-            Skills
-          </a>
-          <a href="/media-experience" className="transition-colors duration-300 hover:text-blue-400">
-            Experience
-          </a>
-          <a href="#projects" className="transition-colors duration-300 hover:text-blue-400">
-            Projects
-          </a>
-          <a href="#contact" className="transition-colors duration-300 hover:text-blue-400">
-            Contact
-          </a>
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  return (
+    <nav
+      aria-label="Main"
+      className="sticky top-0 z-50 border-b border-line bg-nav/95 px-5 py-2 backdrop-blur sm:px-6 md:py-4"
+    >
+      <div className="mx-auto max-w-7xl md:flex md:items-center md:justify-between">
+        <div className="flex items-center justify-between">
+          <Link
+            href="#home"
+            onClick={() => setOpen(false)}
+            className="whitespace-nowrap rounded-md text-base font-semibold tracking-wide text-ink min-[375px]:text-lg sm:text-2xl"
+          >
+            Muhammad Tabish Ali
+          </Link>
+
+          <button
+            ref={menuButtonRef}
+            type="button"
+            aria-expanded={open}
+            aria-controls="primary-navigation"
+            onClick={() => setOpen((value) => !value)}
+            className="inline-flex min-h-11 min-w-[4.5rem] shrink-0 items-center justify-center rounded-md border border-line-strong px-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent md:hidden"
+          >
+            {open ? "Close" : "Menu"}
+          </button>
         </div>
+
+        <ul
+          id="primary-navigation"
+          className={`${
+            open ? "mt-2 flex" : "hidden"
+          } flex-col border-t border-line pt-2 text-base md:mt-0 md:flex md:flex-row md:items-center md:gap-6 md:border-0 md:pt-0 md:text-sm`}
+        >
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={linkClass}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

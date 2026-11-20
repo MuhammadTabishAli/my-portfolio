@@ -101,11 +101,11 @@ const tools = [
 
 export default function MediaExperiencePage() {
   return (
-    <main className="min-h-screen bg-[#182230] px-4 py-10 text-slate-200 sm:px-6 sm:py-14">
+    <main className="min-h-screen bg-page px-4 py-10 text-slate-200 sm:px-6 sm:py-14">
       <div className="mx-auto max-w-5xl">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-sm text-cyan-300 transition hover:border-cyan-400 hover:bg-cyan-400/10"
+          className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-sm text-accent transition hover:border-accent hover:bg-accent/10"
         >
           <span aria-hidden="true">←</span>
           Back to Portfolio
@@ -169,7 +169,7 @@ export default function MediaExperiencePage() {
             {experiences.map((experience) => (
               <article
                 key={`${experience.company}-${experience.role}`}
-                className="group rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition duration-300 hover:border-cyan-400/60 sm:p-7"
+                className="group rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition duration-300 hover:border-accent/60 sm:p-7"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="mb-4 flex h-16 w-28 items-center justify-center rounded-xl border border-slate-700 bg-white p-2">
@@ -214,7 +214,7 @@ export default function MediaExperiencePage() {
                   {experience.responsibilities.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-3 text-sm leading-7 text-slate-400 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.75)] sm:text-base"
+                      className="flex gap-3 text-sm leading-7 text-slate-400 transition-all duration-300 hover:text-white sm:text-base"
                     >
                       <span className="mt-1 text-cyan-400">▹</span>
                       <span>{item}</span>
@@ -244,7 +244,7 @@ export default function MediaExperiencePage() {
             {specialCoverage.map((event) => (
               <article
                 key={event.title}
-                className="rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition hover:border-cyan-400/50"
+                className="rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition hover:border-accent/50"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-lg text-cyan-300">
                   ✦
@@ -272,7 +272,7 @@ export default function MediaExperiencePage() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-slate-700 bg-[#243344] px-4 py-2 text-sm text-[#BBC6D3] transition hover:border-cyan-400/60 hover:text-cyan-300"
+                className="rounded-full border border-slate-700 bg-[#243344] px-4 py-2 text-sm text-[#BBC6D3] transition hover:border-accent/60 hover:text-accent"
               >
                 {skill}
               </span>
@@ -294,7 +294,7 @@ export default function MediaExperiencePage() {
             {tools.map((tool) => (
               <div
                 key={tool}
-                className="rounded-xl border border-slate-700/80 bg-[#243344] px-4 py-4 text-center text-sm font-medium text-[#BBC6D3] transition hover:border-cyan-400/60 hover:text-cyan-300"
+                className="rounded-xl border border-slate-700/80 bg-[#243344] px-4 py-4 text-center text-sm font-medium text-[#BBC6D3] transition hover:border-accent/60 hover:text-accent"
               >
                 {tool}
               </div>
@@ -320,7 +320,7 @@ export default function MediaExperiencePage() {
   id="contact"
   className="mt-14 border-t border-[#354252] py-12"
 >
-  <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+  <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
     Contact Me
   </h2>
 
@@ -333,7 +333,7 @@ export default function MediaExperiencePage() {
     {/* Email */}
     <a
       href="mailto:ttabish9@gmail.com"
-      className="inline-block rounded-lg border border-cyan-400/60 bg-cyan-400/10 px-6 py-3 font-semibold text-cyan-300 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-lg hover:shadow-cyan-400/20"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
     >
       Email Me
     </a>
@@ -343,7 +343,7 @@ export default function MediaExperiencePage() {
       href="https://www.linkedin.com/in/muhammad-tabish-ali-3864652b8/"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block rounded-lg border border-[#8BC5D8] bg-[#243344] px-6 py-3 font-semibold text-[#E5EAF1] transition-all duration-300 hover:border-sky-300 hover:bg-sky-400/10 hover:text-white hover:shadow-lg hover:shadow-sky-400/20"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
     >
       LinkedIn Profile
     </a>
@@ -353,7 +353,7 @@ export default function MediaExperiencePage() {
       href="https://wa.me/923213203026"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block rounded-lg border border-emerald-400/60 bg-emerald-500/10 px-6 py-3 font-semibold text-emerald-300 transition-all duration-300 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-lg hover:shadow-emerald-400/20"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
     >
       WhatsApp Me
     </a>
@@ -368,7 +368,7 @@ export default function MediaExperiencePage() {
 
           <Link
             href="/#home"
-            className="mt-4 inline-block text-cyan-400 transition hover:text-cyan-300"
+            className="mt-4 inline-block text-accent transition hover:text-accent-hover"
           >
             Return to Home ↑
           </Link>

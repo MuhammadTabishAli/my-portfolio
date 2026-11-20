@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-[#182230] px-6 py-10 text-white sm:py-16">
+      <main className="min-h-screen bg-page px-6 py-10 text-white sm:py-16">
         {/* Hero: Introduction on left, photo on right */}
         <section
           id="home"
@@ -18,27 +18,26 @@ export default function Home() {
             </p>
 
             <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight sm:text-6xl">
-  <span className="bg-linear-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent">
-    Journalism & AI.
-  </span>
+  <span className="text-[#E5EAF1]">Journalism</span>
+  <span className="text-[#A9B8C8]"> & AI</span>
 </h1>
 
             <p className="mx-auto mb-8 max-w-xl text-base leading-8 text-[#BBC6D3] sm:text-lg md:mx-0">
-              I am an experienced media professional with a strong background in television news production and a solid foundation in Python, TypeScript, Web Development, Prompt Engineering, and Agentic AI. I combine years of newsroom experience with technology skills to explore innovative solutions, build digital projects, and connect media with emerging technologies.
+              I am a television news producer with 19 years of experience in newsroom operations, live news production, editorial coordination, and special transmissions. Alongside my media career, I have developed skills in Python, TypeScript, web development, prompt engineering, and Agentic AI, exploring how emerging technologies can support modern journalism and digital media.
             </p>
 
             
 <div className="flex flex-wrap justify-center gap-4 md:justify-start">
   <a
     href="#about"
-    className="inline-block rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition duration-300 hover:bg-cyan-300 hover:shadow-xl hover:shadow-cyan-400/30"
+    className="inline-block rounded-lg bg-accent px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-accent/20 transition duration-300 hover:bg-accent-hover hover:shadow-xl hover:shadow-accent/30"
   >
     About Me
   </a>
 
   <a
     href="#projects"
-    className="inline-block rounded-lg border border-slate-600 px-6 py-3 font-semibold text-white transition duration-300 hover:border-blue-400 hover:bg-slate-800"
+    className="inline-block rounded-lg border border-slate-600 px-6 py-3 font-semibold text-white transition duration-300 hover:border-accent hover:bg-slate-800"
   >
     View My Projects
   </a>
@@ -93,7 +92,7 @@ export default function Home() {
           id="about"
           className="mx-auto max-w-4xl border-t border-[#354252] py-12"
         >
-          <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+          <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
   About Me
 </h2>
           <div className="max-w-3xl text-lg leading-8 text-[#BBC6D3]">
@@ -116,12 +115,12 @@ export default function Home() {
           id="skills"
           className="mx-auto max-w-4xl border-t border-[#354252] py-12"
         >
-          <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+          <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
   My Skills
 </h2>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h3 className="mb-2 font-semibold text-cyan-400">
                 Programming
               </h3>
@@ -130,7 +129,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h3 className="mb-2 font-semibold text-cyan-400">
                 Web Development
               </h3>
@@ -139,7 +138,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h3 className="mb-2 font-semibold text-cyan-400">
                 Artificial Intelligence
               </h3>
@@ -148,7 +147,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h3 className="mb-2 font-semibold text-cyan-400">
                 Media Production
               </h3>
@@ -163,7 +162,7 @@ export default function Home() {
           id="education"
           className="mx-auto max-w-4xl border-t border-[#354252] py-12"
         >
-          <h2 className="mb-6 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+          <h2 className="mb-6 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
             Education & Training
           </h2>
 
@@ -173,7 +172,7 @@ export default function Home() {
           </h3>
 
           <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h4 className="mb-2 font-semibold text-white">
                 Bachelor of Arts (Political Science)
               </h4>
@@ -181,7 +180,7 @@ export default function Home() {
               <p className="mt-2 text-sm text-slate-400">2009</p>
             </div>
 
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h4 className="mb-2 font-semibold text-white">
                 Intermediate (Science)
               </h4>
@@ -189,7 +188,7 @@ export default function Home() {
               <p className="mt-2 text-sm text-slate-400">2005</p>
             </div>
 
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h4 className="mb-2 font-semibold text-white">
                 Matriculation (Science)
               </h4>
@@ -206,7 +205,7 @@ export default function Home() {
           </h3>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h4 className="mb-2 font-semibold text-white">
                 Governor House Sindh IT Initiative
               </h4>
@@ -215,7 +214,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <h4 className="mb-2 font-semibold text-white">
                 Mobile Journalism
               </h4>
@@ -231,7 +230,7 @@ export default function Home() {
           id="projects"
           className="mx-auto max-w-4xl border-t border-[#354252] py-12"
         >
-          <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+          <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
   My Projects
 </h2>
 
@@ -240,7 +239,7 @@ export default function Home() {
     href="https://github.com/MuhammadTabishAli"
     target="_blank"
     rel="noopener noreferrer"
-    className="rounded-lg border border-slate-600 bg-slate-800/70 px-4 py-2 text-xs font-semibold text-slate-200 shadow-md shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-linear-to-r hover:from-cyan-500/20 hover:to-violet-500/20 hover:text-white hover:shadow-lg hover:shadow-cyan-500/20"
+    className="rounded-lg border border-slate-600 bg-slate-800/70 px-4 py-2 text-xs font-semibold text-slate-200 shadow-md shadow-black/20 transition-colors duration-300 hover:border-accent hover:text-white"
   >
     GitHub Profile ↗
   </a>
@@ -250,7 +249,7 @@ export default function Home() {
 
             
 {/* Personal Portfolio */}
-<div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+<div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
   <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
     Next.js / React / TypeScript
   </p>
@@ -267,7 +266,7 @@ export default function Home() {
   
 <div className="flex flex-wrap gap-4 text-sm">
   {/* <a
-    className="text-cyan-400 hover:underline"
+    className="text-accent hover:underline"
     href="https://github.com/MuhammadTabishAli/my-portfolio"
     target="_blank"
     rel="noopener noreferrer"
@@ -276,7 +275,7 @@ export default function Home() {
   </a> */}
 
   <a
-    className="text-cyan-400 hover:underline"
+    className="text-accent hover:underline"
     href="https://my-portfolio-pi-three-azvpma3f03.vercel.app/"
     target="_blank"
     rel="noopener noreferrer"
@@ -289,7 +288,7 @@ export default function Home() {
 
 
             {/* Unit Converter */}
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
                 Python / Streamlit
               </p>
@@ -300,17 +299,17 @@ export default function Home() {
                 A web app for converting values between different units.
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
-                {/* <a className="text-cyan-400 hover:underline"
+                {/* <a className="text-accent hover:underline"
                    href="https://github.com/MuhammadTabishAli/Unit-Convertor"
                    target="_blank" rel="noopener noreferrer">GitHub ↗</a> */}
-                <a className="text-cyan-400 hover:underline"
+                <a className="text-accent hover:underline"
                    href="https://unit-convertor-tgeexippd3hzxpsmkbsxad.streamlit.app/"
                    target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
               </div>
             </div>
 
             {/* CSV and Excel Converter */}
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
                 Python / Streamlit
               </p>
@@ -321,17 +320,17 @@ export default function Home() {
                 A tool for working with and converting CSV and Excel files.
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
-                {/* <a className="text-cyan-400 hover:underline"
+                {/* <a className="text-accent hover:underline"
                    href="https://github.com/MuhammadTabishAli/Convertor-CSV-or-Excel"
                    target="_blank" rel="noopener noreferrer">GitHub ↗</a> */}
-                <a className="text-cyan-400 hover:underline"
+                <a className="text-accent hover:underline"
                    href="https://convertor-csv-or-excel-coazhqr8t4tmzdg4gtutjh.streamlit.app/"
                    target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
               </div>
             </div>
 
             {/* Password Strength Meter */}
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
                 Python / Streamlit
               </p>
@@ -342,17 +341,17 @@ export default function Home() {
                 An app that evaluates password strength and provides feedback.
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
-                {/* <a className="text-cyan-400 hover:underline"
+                {/* <a className="text-accent hover:underline"
                    href="https://github.com/MuhammadTabishAli/Password-Strength-Meter"
                    target="_blank" rel="noopener noreferrer">GitHub ↗</a> */}
-                <a className="text-cyan-400 hover:underline"
+                <a className="text-accent hover:underline"
                    href="https://password-strength-meter-lu4w2xkhwwuwugxom2udtc.streamlit.app/"
                    target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
               </div>
             </div>
 
             {/* Simple Calculator */}
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
                 Python / Streamlit
               </p>
@@ -363,17 +362,17 @@ export default function Home() {
                 A simple calculator for performing everyday arithmetic operations.
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
-                {/* <a className="text-cyan-400 hover:underline"
+                {/* <a className="text-accent hover:underline"
                    href="https://github.com/MuhammadTabishAli/simple-calculator-streamlit"
                    target="_blank" rel="noopener noreferrer">GitHub ↗</a> */}
-                <a className="text-cyan-400 hover:underline"
+                <a className="text-accent hover:underline"
                    href="https://simple-calculator-app-kqgspvp9hkrfukgckqfsfv.streamlit.app/"
                    target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
               </div>
             </div>
 
             {/* To-Do App */}
-            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-cyan-500/10">
+            <div className="rounded-xl border border-[#3B4C60] bg-[#243344] p-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-accent/60">
               <p className="mb-2 text-xs font-medium uppercase tracking-widest text-slate-400">
                 Python / Streamlit
               </p>
@@ -384,10 +383,10 @@ export default function Home() {
                 A task management app for organizing and tracking daily tasks.
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
-                {/* <a className="text-cyan-400 hover:underline"
+                {/* <a className="text-accent hover:underline"
                    href="https://github.com/MuhammadTabishAli/TO-DO-app"
                    target="_blank" rel="noopener noreferrer">GitHub ↗</a> */}
-                <a className="text-cyan-400 hover:underline"
+                <a className="text-accent hover:underline"
                    href="https://to-do-app-5lnnbj6icp2nuq6mzgbdal.streamlit.app/"
                    target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
               </div>
@@ -415,7 +414,7 @@ export default function Home() {
 
     <a
       href="/media-experience"
-      className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/50 bg-cyan-400 px-6 py-3 text-sm font-bold text-[#182230] shadow-[0_0_20px_rgba(34,211,238,0.2)] transition duration-300 hover:scale-105 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)]"
+      className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-accent-hover/50 bg-accent px-6 py-3 text-sm font-bold text-[#182230] transition-colors duration-300 hover:bg-accent-hover"
     >
       View Media Experience
       <span aria-hidden="true">↗</span>
@@ -430,7 +429,7 @@ export default function Home() {
   id="contact"
   className="mx-auto max-w-4xl border-t border-[#354252] py-12"
 >
-  <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(139,197,216,0.65)]">
+  <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
     Contact Me
   </h2>
 
@@ -443,7 +442,7 @@ export default function Home() {
     {/* Email */}
     <a
       href="mailto:ttabish9@gmail.com"
-      className="inline-block rounded-lg border border-cyan-400/60 bg-cyan-400/10 px-6 py-3 font-semibold text-cyan-300 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-lg hover:shadow-cyan-400/20"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
     >
       Email Me
     </a>
@@ -453,7 +452,7 @@ export default function Home() {
       href="https://www.linkedin.com/in/muhammad-tabish-ali-3864652b8/"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block rounded-lg border border-[#8BC5D8] bg-[#243344] px-6 py-3 font-semibold text-[#E5EAF1] transition-all duration-300 hover:border-sky-300 hover:bg-sky-400/10 hover:text-white hover:shadow-lg hover:shadow-sky-400/20"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
     >
       LinkedIn Profile
     </a>
@@ -463,7 +462,7 @@ export default function Home() {
       href="https://wa.me/923213203026"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block rounded-lg border border-emerald-400/60 bg-emerald-500/10 px-6 py-3 font-semibold text-emerald-300 transition-all duration-300 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-lg hover:shadow-emerald-400/20"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
     >
       WhatsApp Me
     </a>

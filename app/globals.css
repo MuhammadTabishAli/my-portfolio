@@ -1,23 +1,79 @@
 @import "tailwindcss";
 
+/* Design tokens: dark slate, off-white text, muted brass accent */
 :root {
-  --background: #f3f5f8;
-  --foreground: #1e293b;
+  --page: #1e293b; /* page background */
+  --nav: #182230; /* navbar / deepest surface, also text on accent */
+  --surface: #243344; /* cards and panels */
+  --line: #354252; /* subtle borders and dividers */
+  --line-strong: #3b4c60; /* card borders */
+  --ink: #e5eaf1; /* primary off-white text */
+  --ink-muted: #bbc6d3; /* secondary text */
+  --accent: #b69a69; /* muted brass */
+  --accent-hover: #c9b085; /* lighter brass for hover */
+
+  --nav-height: 6rem; /* scroll offset for the sticky navbar */
+
+  /* Kept for compatibility with the create-next-app defaults */
+  --background: var(--page);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-page: var(--page);
+  --color-nav: var(--nav);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-padding-top: var(--nav-height);
+  background: var(--page);
+  color-scheme: dark;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
+  background: var(--page);
+  color: var(--ink);
+}
+
+/* Keep anchor targets clear of the sticky navbar */
+section[id] {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* Keyboard focus: clear, consistent, and only for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
