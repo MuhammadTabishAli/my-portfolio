@@ -16,7 +16,7 @@ const featured: Project[] = [
     stack: "Next.js / React / TypeScript",
     title: "Baba Transport Service",
     description:
-      "My first professional project: a website for a transport service company.",
+      "My professional project as a web developer: a website for a transport service company.",
     url: "https://www.babatransportservice.com/",
   },
   {
@@ -68,21 +68,21 @@ const streamlitApps: Project[] = [
   },
 ];
 
-const card =
-  "rounded-xl border border-white/10 bg-white/5 p-5 transition-colors hover:border-white/25";
+const stackClass =
+  "text-xs font-medium uppercase tracking-wider text-ink-muted";
 
 export default function Projects() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="projects" className="mx-auto w-full max-w-3xl px-6 py-16">
-      <div className="mb-8 flex items-center justify-between">
-        <h2 className="text-3xl font-semibold">My Projects</h2>
+    <section id="projects" className="page-section">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+        <h2 className="section-title">My Projects</h2>
         <a
           href="https://github.com/MuhammadTabishAli"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm underline underline-offset-4"
+          className="text-link inline-flex min-h-11 items-center"
         >
           GitHub Profile ↗
         </a>
@@ -90,72 +90,86 @@ export default function Projects() {
 
       <div className="flex flex-col gap-4">
         {featured.map((p) => (
-          <div key={p.title} className={card}>
-            <p className="text-xs opacity-60">{p.stack}</p>
-            <h3 className="mt-1 text-xl font-medium">{p.title}</h3>
-            <p className="mt-2 text-sm opacity-80">{p.description}</p>
+          <article key={p.title} className="card px-5 py-4">
+            <p className={stackClass}>{p.stack}</p>
+            <h3 className="mt-1 text-xl font-semibold text-ink">{p.title}</h3>
+            <p className="mt-1 leading-7 text-ink-muted">{p.description}</p>
+            {/* -mb-3 keeps the 44px tap target without adding empty space below */}
             <a
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm underline underline-offset-4"
+              className="text-link -mb-3 inline-flex min-h-11 items-center"
             >
               Live Demo ↗
             </a>
-          </div>
+          </article>
         ))}
 
         {/* One box for all Streamlit apps */}
-        <div className={card}>
+        <div className="card">
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="streamlit-apps"
-            className="flex w-full items-center justify-between text-left"
+            className={`group flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200 hover:bg-surface-hover focus-visible:-outline-offset-2 ${
+              open ? "rounded-t-[11px]" : "rounded-[11px]"
+            }`}
           >
             <span>
-              <span className="block text-xs opacity-60">Python / Streamlit</span>
-              <span className="mt-1 block text-xl font-medium">
+              <span className={`block ${stackClass}`}>Python / Streamlit</span>
+              <span className="mt-1 block text-xl font-semibold text-ink transition-colors group-hover:text-accent-hover">
                 Streamlit Apps ({streamlitApps.length})
               </span>
-              <span className="mt-2 block text-sm opacity-80">
+              <span className="mt-1 block leading-7 text-ink-muted">
                 Small tools built with Python and Streamlit. Click to see all of them.
               </span>
             </span>
-            <span
-              className={`ml-4 text-2xl transition-transform ${open ? "rotate-180" : ""}`}
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={`size-6 shrink-0 text-accent transition-transform duration-200 group-hover:text-accent-hover ${
+                open ? "rotate-180" : ""
+              }`}
               aria-hidden="true"
             >
-              ⌄
-            </span>
+              <path d="m5 7.5 5 5 5-5" />
+            </svg>
           </button>
 
-          {open && (
-            <ul
-              id="streamlit-apps"
-              className="mt-5 divide-y divide-white/10 border-t border-white/10"
-            >
-              {streamlitApps.map((app) => (
-                <li key={app.title}>
-                  <a
-                    href={app.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-4 py-3 hover:opacity-80"
-                  >
-                    <span>
-                      <span className="block font-medium">{app.title}</span>
-                      <span className="block text-sm opacity-70">{app.description}</span>
+          <ul
+            id="streamlit-apps"
+            hidden={!open}
+            className="divide-y divide-line-strong border-t border-line-strong"
+          >
+            {streamlitApps.map((app) => (
+              <li key={app.title} className="group/item">
+                <a
+                  href={app.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col gap-1 px-5 py-3 transition-colors duration-200 group-last/item:rounded-b-[11px] hover:bg-surface-hover focus-visible:-outline-offset-2 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+                >
+                  <span>
+                    <span className="block font-semibold text-ink transition-colors group-hover:text-accent-hover">
+                      {app.title}
                     </span>
-                    <span className="shrink-0 text-sm underline underline-offset-4">
-                      Live Demo ↗
+                    <span className="block text-sm leading-6 text-ink-muted">
+                      {app.description}
                     </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
+                  </span>
+                  <span className="shrink-0 text-sm font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors group-hover:text-accent-hover group-hover:decoration-accent-hover">
+                    Live Demo ↗
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

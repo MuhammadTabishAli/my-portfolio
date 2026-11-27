@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Contact from "@/components/Contact";
 
 const experiences = [
   {
@@ -99,124 +100,118 @@ const tools = [
   "WASP",
 ];
 
+const highlights = [
+  { value: "2007", label: "Career began" },
+  { value: "4", label: "Professional roles" },
+  { value: "Live TV", label: "Production experience" },
+];
+
+function SectionHeading({ label, title }: { label: string; title: string }) {
+  return (
+    <>
+      <p className="eyebrow">{label}</p>
+      <h2 className="section-title mt-2">{title}</h2>
+    </>
+  );
+}
+
 export default function MediaExperiencePage() {
   return (
-    <main className="min-h-screen bg-page px-4 py-10 text-slate-200 sm:px-6 sm:py-14">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-sm text-accent transition hover:border-accent hover:bg-accent/10"
-        >
+    <main className="min-h-screen bg-page px-5 py-8 text-ink sm:px-6 sm:py-12">
+      <div className="container-page">
+        <Link href="/" className="btn btn-secondary">
           <span aria-hidden="true">←</span>
           Back to Portfolio
         </Link>
 
-        <header className="relative mt-10 overflow-hidden rounded-3xl border border-slate-700/70 bg-linear-to-br from-[#13243b] via-[#101c30] to-[#182230] p-6 sm:p-10">
-          <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl" />
+        <header className="mt-8 rounded-xl border border-line-strong bg-surface p-6 sm:p-10">
+          <p className="eyebrow mb-3">Career Journey</p>
 
-          <div className="relative">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-cyan-400 sm:text-sm">
-              Career Journey
-            </p>
+          <h1 className="text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
+            Media Experience
+          </h1>
 
-            <h1 className="text-3xl font-black leading-tight text-white sm:text-5xl">
-              Media Experience
-            </h1>
+          <p className="mt-4 max-w-2xl leading-7 text-ink-muted">
+            A professional journey in television journalism, editorial
+            planning, live news production, and broadcast operations.
+          </p>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#BBC6D3] sm:text-base">
-              A professional journey in television journalism, editorial
-              planning, live news production, and broadcast operations.
-            </p>
-
-            <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-slate-700 bg-[#182230]/60 p-4">
-                <p className="text-2xl font-extrabold text-cyan-300">2007</p>
-                <p className="mt-1 text-xs text-slate-400">
-                  Career began
-                </p>
+          <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-lg border border-line-strong bg-nav p-4"
+              >
+                <p className="text-2xl font-bold text-accent">{item.value}</p>
+                <p className="mt-1 text-sm text-ink-muted">{item.label}</p>
               </div>
-
-              <div className="rounded-xl border border-slate-700 bg-[#182230]/60 p-4">
-                <p className="text-2xl font-extrabold text-cyan-300">4</p>
-                <p className="mt-1 text-xs text-slate-400">
-                  Professional roles
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-slate-700 bg-[#182230]/60 p-4">
-                <p className="text-2xl font-extrabold text-cyan-300">
-                  Live TV
-                </p>
-                <p className="mt-1 text-xs text-slate-400">
-                  Production experience
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </header>
 
-        <section className="mt-12">
-          <div className="mb-7">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-              Professional Background
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Career Experience
-            </h2>
+        <section className="py-12 sm:py-14">
+          <div className="mb-6">
+            <SectionHeading
+              label="Professional Background"
+              title="Career Experience"
+            />
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-4">
             {experiences.map((experience) => (
               <article
                 key={`${experience.company}-${experience.role}`}
-                className="group rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition duration-300 hover:border-accent/60 sm:p-7"
+                className="card p-5 sm:p-7"
               >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="mb-4 flex h-16 w-28 items-center justify-center rounded-xl border border-slate-700 bg-white p-2">
-  <Image
-    src={experience.logo}
-    alt={`${experience.company} logo`}
-    width={112}
-    height={64}
-    className="max-h-12 w-auto object-contain"
-  />
-</div>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="text-xl font-bold text-white sm:text-2xl">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
+                  <div className="flex h-16 w-28 shrink-0 items-center justify-center rounded-lg bg-white p-2">
+                    <Image
+                      src={experience.logo}
+                      alt={`${experience.company} logo`}
+                      width={112}
+                      height={64}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                      <h3 className="text-xl font-bold text-ink">
                         {experience.role}
                       </h3>
 
                       {experience.current && (
-                        <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">
+                        <span className="rounded-full border border-accent/60 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent-hover">
                           Current Role
                         </span>
                       )}
                     </div>
 
-                    <p className="mt-2 font-semibold text-cyan-300">
+                    <p className="mt-1 font-semibold text-accent">
                       {experience.company}
                     </p>
                   </div>
 
-                  <span className="w-fit shrink-0 rounded-lg border border-slate-700 bg-slate-900/50 px-3 py-2 text-xs text-[#BBC6D3] sm:text-sm">
+                  <p className="shrink-0 text-sm text-ink-muted sm:self-start sm:text-right">
                     {experience.duration}
-                  </span>
+                  </p>
                 </div>
 
-                <div className="my-5 border-t border-slate-700/70" />
+                <div className="my-5 border-t border-line-strong" />
 
-                <h4 className="mb-4 text-sm font-semibold text-slate-200">
+                <h4 className="mb-3 text-sm font-semibold text-ink">
                   Key Responsibilities
                 </h4>
 
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {experience.responsibilities.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-3 text-sm leading-7 text-slate-400 transition-all duration-300 hover:text-white sm:text-base"
+                      className="flex gap-3 text-sm leading-7 text-ink-muted transition-colors duration-200 hover:text-ink sm:text-base"
                     >
-                      <span className="mt-1 text-cyan-400">▹</span>
+                      <span aria-hidden="true" className="text-accent">
+                        ▹
+                      </span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -226,15 +221,13 @@ export default function MediaExperiencePage() {
           </div>
         </section>
 
-        <section className="mt-14">
-          <div className="mb-7">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-              Major Broadcast Assignments
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Special Coverage & Events
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
+        <section className="page-section">
+          <div className="mb-6">
+            <SectionHeading
+              label="Major Broadcast Assignments"
+              title="Special Coverage & Events"
+            />
+            <p className="mt-3 max-w-2xl leading-7 text-ink-muted">
               Selected election and national-event transmissions during my
               time at AAJ News.
             </p>
@@ -244,13 +237,10 @@ export default function MediaExperiencePage() {
             {specialCoverage.map((event) => (
               <article
                 key={event.title}
-                className="rounded-2xl border border-slate-700/80 bg-[#243344] p-5 transition hover:border-accent/50"
+                className="card p-5 sm:last:odd:col-span-2"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-lg text-cyan-300">
-                  ✦
-                </div>
-                <h3 className="font-bold text-white">{event.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-400">
+                <h3 className="font-semibold text-ink">{event.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-ink-muted">
                   {event.detail}
                 </p>
               </article>
@@ -258,50 +248,47 @@ export default function MediaExperiencePage() {
           </div>
         </section>
 
-        <section className="mt-14">
-          <div className="mb-7">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-              Areas of Expertise
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Core Competencies
-            </h2>
+        <section className="page-section">
+          <div className="mb-6">
+            <SectionHeading
+              label="Areas of Expertise"
+              title="Core Competencies"
+            />
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <ul className="flex flex-wrap gap-3">
             {skills.map((skill) => (
-              <span
+              <li
                 key={skill}
-                className="rounded-full border border-slate-700 bg-[#243344] px-4 py-2 text-sm text-[#BBC6D3] transition hover:border-accent/60 hover:text-accent"
+                className="card px-4 py-2 text-sm text-ink-muted hover:text-ink"
               >
                 {skill}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
-        <section className="mt-14">
-          <div className="mb-7">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-              Broadcast Technology
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Software & Tools
-            </h2>
+        <section className="page-section">
+          <div className="mb-6">
+            <SectionHeading
+              label="Broadcast Technology"
+              title="Software & Tools"
+            />
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {tools.map((tool) => (
-              <div
+              <li
                 key={tool}
-                className="rounded-xl border border-slate-700/80 bg-[#243344] px-4 py-4 text-center text-sm font-medium text-[#BBC6D3] transition hover:border-accent/60 hover:text-accent"
+                className="card p-4 text-center text-sm font-medium text-ink-muted hover:text-ink"
               >
                 {tool}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
-{/* 
+
+{/*
         <section className="mt-14 rounded-2xl border border-cyan-400/20 bg-linear-to-r from-cyan-400/10 to-blue-500/5 p-6 sm:p-8">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
             Professional Focus
@@ -315,60 +302,16 @@ export default function MediaExperiencePage() {
             live television broadcasts.
           </p>
         </section> */}
-{/* Contact */}
-<section
-  id="contact"
-  className="mt-14 border-t border-[#354252] py-12"
->
-  <h2 className="mb-4 text-2xl font-bold bg-linear-to-r from-slate-100 to-blue-400 bg-clip-text text-transparent transition-all duration-300">
-    Contact Me
-  </h2>
 
-  <p className="mb-6 max-w-2xl leading-7 text-[#BBC6D3]">
-    Interested in working together or discussing an opportunity?
-    Feel free to get in touch.
-  </p>
+        <Contact />
 
-  <div className="flex flex-wrap gap-4">
-    {/* Email */}
-    <a
-      href="mailto:ttabish9@gmail.com"
-      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
-    >
-      Email Me
-    </a>
-
-    {/* LinkedIn */}
-    <a
-      href="https://www.linkedin.com/in/muhammad-tabish-ali-3864652b8/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
-    >
-      LinkedIn Profile
-    </a>
-
-    {/* WhatsApp */}
-    <a
-      href="https://wa.me/923213203026"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex min-h-11 items-center justify-center rounded-lg border border-accent px-6 py-2.5 text-sm font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-nav"
-    >
-      WhatsApp Me
-    </a>
-  </div>
-</section>
-
-        <footer className="mt-12 border-t border-[#354252] pt-6 text-sm text-slate-500">
-          <p className="font-semibold text-[#BBC6D3]">
-            Muhammad Tabish Ali
-          </p>
+        <footer className="border-t border-line pt-6 text-sm text-ink-muted">
+          <p className="font-semibold text-ink">Muhammad Tabish Ali</p>
           <p className="mt-1">Media Professional · News Production · AI Skills</p>
 
           <Link
             href="/#home"
-            className="mt-4 inline-block text-accent transition hover:text-accent-hover"
+            className="text-link mt-2 inline-flex min-h-11 items-center"
           >
             Return to Home ↑
           </Link>

@@ -5,18 +5,25 @@
   --page: #1e293b; /* page background */
   --nav: #182230; /* navbar / deepest surface, also text on accent */
   --surface: #243344; /* cards and panels */
+  --surface-hover: #293a4e; /* hovered rows and controls */
   --line: #354252; /* subtle borders and dividers */
   --line-strong: #3b4c60; /* card borders */
   --ink: #e5eaf1; /* primary off-white text */
   --ink-muted: #bbc6d3; /* secondary text */
   --accent: #b69a69; /* muted brass */
-  --accent-hover: #c9b085; /* lighter brass for hover */
+  --accent-hover: #cfb78d; /* lighter brass for hover */
 
-  --nav-height: 6rem; /* scroll offset for the sticky navbar */
+  --nav-height: 3.875rem; /* scroll offset for the sticky navbar */
 
   /* Kept for compatibility with the create-next-app defaults */
   --background: var(--page);
   --foreground: var(--ink);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --nav-height: 4.8125rem;
+  }
 }
 
 @theme inline {
@@ -25,6 +32,7 @@
   --color-page: var(--page);
   --color-nav: var(--nav);
   --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-ink: var(--ink);
@@ -35,26 +43,63 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-padding-top: var(--nav-height);
-  background: var(--page);
-  color-scheme: dark;
+@layer base {
+  html {
+    scroll-padding-top: var(--nav-height);
+    background: var(--page);
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--page);
+    color: var(--ink);
+  }
+
+  /* Keyboard focus: clear, consistent, and only for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 3px;
+  }
 }
 
-body {
-  background: var(--page);
-  color: var(--ink);
-}
+/* Shared building blocks, so every page uses the same spacing and states */
+@layer components {
+  /* One content column for the navbar and every section */
+  .container-page {
+    @apply mx-auto w-full max-w-4xl;
+  }
 
-/* Keep anchor targets clear of the sticky navbar */
-section[id] {
-  scroll-margin-top: var(--nav-height);
-}
+  .page-section {
+    @apply mx-auto w-full max-w-4xl border-t border-line py-12 sm:py-14;
+  }
 
-/* Keyboard focus: clear, consistent, and only for keyboard users */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-ink sm:text-3xl;
+  }
+
+  .card {
+    @apply rounded-xl border border-line-strong bg-surface transition-colors duration-200 hover:border-accent/70 focus-within:border-accent/70;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-semibold transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply border-accent bg-accent text-nav hover:border-accent-hover hover:bg-accent-hover;
+  }
+
+  .btn-secondary {
+    @apply border-accent/70 text-accent hover:border-accent hover:bg-accent hover:text-nav;
+  }
+
+  .text-link {
+    @apply rounded-sm text-sm font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors duration-200 hover:text-accent-hover hover:decoration-accent-hover;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -64,10 +109,6 @@ section[id] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

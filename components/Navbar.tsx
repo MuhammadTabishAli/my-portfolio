@@ -13,7 +13,7 @@ const links = [
 ];
 
 const linkClass =
-  "flex min-h-11 items-center rounded-md px-3 text-ink-muted transition-colors duration-200 hover:text-accent md:px-0";
+  "flex min-h-11 items-center rounded-md px-3 text-ink-muted underline decoration-transparent decoration-2 underline-offset-8 transition-colors duration-200 hover:bg-surface-hover hover:text-ink hover:decoration-accent md:px-0 md:hover:bg-transparent";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -37,12 +37,12 @@ export default function Navbar() {
       aria-label="Main"
       className="sticky top-0 z-50 border-b border-line bg-nav/95 px-5 py-2 backdrop-blur sm:px-6 md:py-4"
     >
-      <div className="mx-auto max-w-7xl md:flex md:items-center md:justify-between">
-        <div className="flex items-center justify-between">
+      <div className="container-page md:flex md:items-center md:justify-between">
+        <div className="flex items-center justify-between gap-3">
           <Link
             href="#home"
             onClick={() => setOpen(false)}
-            className="whitespace-nowrap rounded-md text-base font-semibold tracking-wide text-ink min-[375px]:text-lg sm:text-2xl"
+            className="inline-flex min-h-11 items-center whitespace-nowrap rounded-md text-base font-semibold tracking-wide text-ink transition-colors duration-200 hover:text-accent-hover min-[375px]:text-lg sm:text-2xl"
           >
             Muhammad Tabish Ali
           </Link>
@@ -53,7 +53,7 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="primary-navigation"
             onClick={() => setOpen((value) => !value)}
-            className="inline-flex min-h-11 min-w-[4.5rem] shrink-0 items-center justify-center rounded-md border border-line-strong px-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent md:hidden"
+            className="inline-flex min-h-11 min-w-[4.5rem] shrink-0 items-center justify-center rounded-md border border-line-strong px-3 text-sm font-medium text-ink cursor-pointer transition-colors duration-200 hover:border-accent hover:bg-surface-hover hover:text-accent-hover md:hidden"
           >
             {open ? "Close" : "Menu"}
           </button>
