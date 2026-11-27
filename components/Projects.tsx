@@ -32,6 +32,13 @@ const featured: Project[] = [
       "My personal website showcasing my skills, projects, and experience in media, web development, and AI.",
     url: "https://muhammad-tabish.vercel.app/",
   },
+  {
+    stack: "HTML / CSS / JavaScript",
+    title: "Resume Builder",
+    description:
+      "Write a resume in Markdown with a live preview, choose a Classic, Modern or Compact template, and save it as a PDF. Work is saved in your browser.",
+    url: "https://simple-resume-builder-4u.vercel.app/",
+  },
 ];
 
 // 2) All Streamlit projects live inside one box.
